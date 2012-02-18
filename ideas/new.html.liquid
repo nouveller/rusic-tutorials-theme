@@ -13,43 +13,14 @@
       
       <!-- Custom field 1 (prep time) -->
       <div class="input last">
-        <label>total prep &amp; cooking time</label>
-        <input id="time" name="idea[custom1]" type="text" placeholder="00" class="field required">
-        <span class="minutes">minutes</span>
-      </div>
-      
-      <!-- Custom field 2 (difficulty) -->
-      <div class="input">
-        <label>difficulty</label>
-        <div id="difficulty-select">
-          <input type="radio" name="idea[custom2]" value="easy" id="easy" checked /><label for="easy" class="easy">easy</label>
-          <input type="radio" name="idea[custom2]" value="moderate" id="moderate" /><label for="moderate" class="moderate">moderate</label>
-          <input type="radio" name="idea[custom2]" value="challenging" id="challenging" /><label for="challenging" class="challenging">challenging</label>
-        </div>
-      </div>
-      
-      <!-- Image upload -->
-      <div class="input photoupload last">
-        <label>photo</label>
-        <input type="file" id="idea_images_attributes_0_file" name="idea[images_attributes][0][file]" class="upload required" />
-      </div>
-      
-      <!-- Custom field 3 (ingredients list) -->
-      <div class="input content1">
-        <label>ingredients</label> <span class="tip">one per line (eg. 200g Plain flour)</span>
-        <textarea id="items-list" name="idea[custom3]" placeholder="ingredients" class="list field required"></textarea>
-      </div>
-      
-      <!-- Main content -->
-      <div class="input last">
-        <label for="idea[content]">instructions / method</label> <span class="tip">use a new paragraph for each step</span>
-        <textarea id="content-input" name="idea[content]" placeholder="method / insructions" class="content field required"></textarea>
+        <label>Colours to send</label>
+        <input id="colours" name="idea[custom1]" type="text" class="field required" value="{{ colours }}">
       </div>
       
       <!-- Share & submit -->
       <div class="input actions last">
         <div class="checkarea"><input type="checkbox" name="idea[should_post_to_social]" value="1" checked />share to {{current_user.provider}}?</div>
-        <input type="submit" value="submit recipe" class="btn primary submit" />
+        <input type="submit" value="submit colours" class="btn primary submit" />
       </div>
       
     </fieldset>
