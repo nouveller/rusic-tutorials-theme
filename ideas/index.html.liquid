@@ -12,27 +12,25 @@
 </div>
 
 {% if space.ideas != empty %}
-  <div id="recipes-list" class="block">
+<ul class="colours">
+  {% for idea in space.ideas %}
+  <li>
+    
+    <div class="colour-pane">
+      <ul class="swatches" data-colours="{{idea.custom1}}">
+      </ul>
+      <div class="colour-info">
+        <p>{{idea.title}} - <a href="{{idea.content}}">View</a></p>
+      </div><!-- /.colour-info -->  
+    </div><!-- /.colour-pane -->
 
-    {% for idea in space.ideas %}
-    <div class="teaser">
-      <a href="{{idea.permalink}}" title="link to page for {{idea.title}}"><img src="{{idea.images.first.medium}}" alt="photograph for {{idea.title}}" class="main-image {{idea.custom2}}" /></a>
-      <div class="meta">
-        <div class="time">{{idea.custom1}} minutes</div>
-        <div class="difficulty {{idea.custom2}}">{{idea.custom2}}</div>
-        {% if idea.liked? %}
-        <span class="liked">{{idea.likes}}</span>
-        {% else %}
-        <div class="likes" the_link="{{idea.like_link}}"><span class="likecount">{{idea.likes}}</span></div>
-        {% endif %}
-      </div>
-    </div>
-    {% endfor %}
+  </li>
+  {% endfor %}
+</ul>
 
-  <div>
 {% else %}
 
-<div class="empty">
+<div class="alert">
   <h1>Uhoh, it doesn't look like there are any {{ theme.ideas_context }} to show you!</h1>
   {% if current_user %}
   <p>Add a {{theme.idea_context}} by using the 'Add {{theme.idea_context}}' button.</p>
