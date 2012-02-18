@@ -1,55 +1,31 @@
-<div id="main" role="main" class="row">
+<ul class="colours show-page">
+  <li>
+    
+    <div class="colour-pane">
+      <ul class="swatches" data-colours="{{idea.custom1}}">
+      </ul>
+      <div class="colour-info">
+        <p><a href="{{idea.permalink}}">{{idea.title}}</a> - Found: <a href="{{idea.content}}">{{idea.content}}</a></p>
+      </div><!-- /.colour-info -->  
+    </div><!-- /.colour-pane -->
 
-	<div id="single" class="span11 offset2">
+  </li>
+</ul>
 	
-		<!-- Actions menu -->
-		<div id="actions">
-		
-			<a href="#comments" title="link to comments for this entry" class="comments">{{idea.comments_count}}</a>
-	
-			{% if idea.liked? %}
-			<span class="liked">{{idea.likes}}</span>
-			{% else %}
-			<div class="likes" the_link="{{idea.like_link}}"><span class="likecount">{{idea.likes}}</span></div>
-			{% endif %}
-	
-			{% if idea.user.uuid == current_user.uuid %}
-			<a href="{{idea.permalink}}/edit" title="link to edit {{idea.title}}" class="editbtn">edit</a>
-			{% endif %}
-	
-			<div id="share-button">
-				<a href="http://twitter.com/home/?status={{space.title}} - {{idea.title}}: {{space.permalink}}/{{idea.permalink}}" target="_blank" title="share on Twitter" class="share twitter"><i></i>share on Twitter</a>
-				<a href="http://www.facebook.com/sharer.php?u={{idea.permalink}}" title="share on Facebook" class="share facebook"><i></i>share on Facebook</a>
-			</div>
-			
-		</div>
-	
-		<!-- Main entry -->
-		<h1>{{idea.title}}</h1>
-		<div class="meta"><div class="time">{{idea.custom1}} minutes</div>
-		<div class="difficulty {{idea.custom2}}">{{idea.custom2}}</div>
-		<div class="author"><a href="{{idea.user.profile_url}}" title="link to profile of {{idea.user.nickname}} on {{idea.user.provider}}"><img src="{{idea.user.image_url}}" alt="avatar for {{idea.user.nickname}}" width="18" height="18" class="avatar" /></a> added by <a href="{{idea.user.profile_url}}" title="link to profile of {{idea.user.nickname}} on {{idea.user.provider}}">{{idea.user.nickname}}</a></div></div>
-	
-		<!-- List -->
-		<div id="single-main">
-			<div id="item-list" class="span4 offset2">
-			<h3>Ingredients</h3>
-			{{idea.custom3 | markdown}}
-		</div>
-	
-		<!-- Actions menu -->
-		<div id="content" class="span7">
-	
-			<img src="{{idea.images.first.medium_large}}" alt="photograph for {{idea.title}}" class="main-image" />
-	
-			<!-- Content -->
-			<div id="detail">
-				<h3>Method / Instruction</h3>
-				{{idea.content | markdown}}
-			</div>
-			
-		</div>
-	</div>
+{% if idea.liked? %}
+<span class="liked">{{idea.likes}}</span>
+{% else %}
+<div class="likes" the_link="{{idea.like_link}}"><span class="likecount">{{idea.likes}}</span></div>
+{% endif %}
+
+{% if idea.user.uuid == current_user.uuid %}
+<a href="{{idea.permalink}}/edit" title="link to edit {{idea.title}}" class="editbtn">edit</a>
+{% endif %}
+
+<div id="share-button">
+	<a href="http://twitter.com/home/?status={{space.title}} - {{idea.title}}: {{space.permalink}}/{{idea.permalink}}" target="_blank" title="share on Twitter" class="share twitter"><i></i>share on Twitter</a>
+	<a href="http://www.facebook.com/sharer.php?u={{idea.permalink}}" title="share on Facebook" class="share facebook"><i></i>share on Facebook</a>
+</div>
 	
 	<!-- Comments -->
 	<div id="comments" class="span11 offset2">
