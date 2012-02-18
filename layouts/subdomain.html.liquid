@@ -35,10 +35,10 @@
     </title>
 
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="{{ asset_url }}css/style.css">
+    <link rel="stylesheet" href="{{ asset_url }}/css/style.css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
 
-    <script src="{{ asset_url }}js/libs/modernizr-2.5.2.min.js"></script>
+    <script src="{{ asset_url }}/js/libs/modernizr-2.5.2.min.js"></script>
 
     {{ content_for_header }}
   </head>
@@ -69,7 +69,7 @@
           {% endif %}
           </div>
         </div>
-        
+
         {% if current_user %}
         <a href="{{space.permalink}}/ideas/new" title="Link to add a new recipe" class="btn add">Add {{ theme.idea_context | capitalize }}</a>
         {% else %}
