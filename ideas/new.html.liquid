@@ -7,14 +7,14 @@
       
       <input class="input-text" id="title" name="idea[title]" type="text" placeholder="Swatch name..." />
       
-      <input type="submit" value="submit colours" class="input-submit" />
+      <input type="submit" value="Submit" class="input-submit" />
 
       <div class="checkarea"><input type="checkbox" name="idea[should_post_to_social]" value="1" checked />share to {{current_user.provider}}?</div>
 
       <!-- Custom field 1 (prep time) -->
       <input id="colours" name="idea[custom1]" type="text" value="{{ params.colours }}">
 
-      <input id="description" name="idea[description]" type="text" value="{{ params.url }}">
+      <input id="content" name="idea[content]" type="text" value="{{ params.url }}">
       
   </form>
   {% else %}
