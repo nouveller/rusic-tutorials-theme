@@ -18,6 +18,7 @@
 <div class="likes" the_link="{{idea.like_link}}"><span class="likecount">{{idea.likes}}</span></div>
 {% endif %}
 
+<!--
 {% if idea.user.uuid == current_user.uuid %}
 <a href="{{idea.permalink}}/edit" title="link to edit {{idea.title}}" class="editbtn">edit</a>
 {% endif %}
@@ -26,7 +27,7 @@
 	<a href="http://twitter.com/home/?status={{space.title}} - {{idea.title}}: {{space.permalink}}/{{idea.permalink}}" target="_blank" title="share on Twitter" class="share twitter"><i></i>share on Twitter</a>
 	<a href="http://www.facebook.com/sharer.php?u={{idea.permalink}}" title="share on Facebook" class="share facebook"><i></i>share on Facebook</a>
 </div>
-	
+-->
 		
 <div class="dummy-header">
 	<h2>Comments
@@ -60,7 +61,7 @@
 	<h2>Add a {{ theme.comment_context }}</h2>
 </div><!-- /.dummy-header -->	
 	
-	<form action="{{idea.permalink}}/comments" method="post" charset="utf-8">
+	<form action="{{idea.permalink}}/comments" method="post" charset="utf-8" class="form-comment">
 		<textarea id="comment_body" name="comment[body]" class="input-textarea"></textarea>
 		<input type="submit" name="submit" value="Post {{ theme.comment_context }}" class="input-submit" />
 		<div class="checkarea"><input class="checkbox" type="checkbox" id="comment_should_post_to_social" name="comment[should_post_to_social]" value="1" checked="checked" /> share this {{ theme.comment_context }} to {{current_user.provider}}?</div>
