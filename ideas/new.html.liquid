@@ -12,9 +12,9 @@
       <div class="checkarea"><input type="checkbox" name="idea[should_post_to_social]" value="1" checked />share to {{current_user.provider}}?</div>
 
       <!-- Custom field 1 (prep time) -->
-      <input id="colours" name="idea[custom1]" type="text" value="{{ params.colours }}">
+      <input id="colours" name="idea[custom1]" type="hidden" value="{{ params.colours }}">
 
-      <input id="content" name="idea[content]" type="text" value="{{ params.url }}">
+      <input id="content" name="idea[content]" type="hidden" value="{{ params.url }}">
       
   </form>
   {% else %}
