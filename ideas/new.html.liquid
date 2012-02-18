@@ -1,15 +1,11 @@
-<div id="new-entry" class="span11 offset2">
+<div class="new-idea-form">
   
   {% if current_user %}
-  <!-- Add new entry form -->
+
   <form id="entry_form" method="post" action="{{space.permalink}}/ideas" class="add-new" enctype="multipart/form-data">
-    <fieldset>
-    
-      <!-- Entry title -->
-      <div class="input">
-        <label for="idea[title]">{{ theme.idea_context }} title</label>
-        <input id="title" name="idea[title]" type="text" placeholder="{{ theme.idea_context }} title" class="field required">
-      </div>
+      
+      
+      <input class="input-text" id="title" name="idea[title]" type="text" placeholder="Swatch name..." />
       
       <!-- Custom field 1 (prep time) -->
       <div class="input last">
@@ -17,18 +13,15 @@
         <input id="colours" name="idea[custom1]" type="text" class="field required" value="{{ params.colours }}">
       </div>
       
-      <!-- Share & submit -->
-      <div class="input actions last">
-        <div class="checkarea"><input type="checkbox" name="idea[should_post_to_social]" value="1" checked />share to {{current_user.provider}}?</div>
-        <input type="submit" value="submit colours" class="btn primary submit" />
-      </div>
+      <input type="submit" value="submit colours" class="input-submit" />
+
+      <div class="checkarea"><input type="checkbox" name="idea[should_post_to_social]" value="1" checked />share to {{current_user.provider}}?</div>
       
-    </fieldset>
   </form>
   {% else %}
-  <div id="intro" class="span12 offset1">
+  <div class="alert">
     you need to login to add a {{ theme.idea_context }}!
-  </div>
+  </div><!-- /.alert -->
   {% endif %}
   
 </div>
