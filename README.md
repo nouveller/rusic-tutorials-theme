@@ -1,4 +1,4 @@
-Rusic recipes theme
+Rusic Colour theme
 
 See http://hq.rusic.com/theming for docs
 
