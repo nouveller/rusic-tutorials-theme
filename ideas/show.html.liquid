@@ -29,13 +29,12 @@
 	
 		
 	<div class="dummy-header">
-		<h2>Comments</h2>  
+		<h2>Comments
+		{% if current_user %}
+		<a href="#comment-form" title="link to add a new {{ theme.comment_context }}" class="btn add-comment">Add {{ theme.comment_context }}</a>
+		{% endif %}
+		</h2>  
 	</div><!-- /.dummy-header -->
-		
-	
-	{% if current_user %}
-	<a href="#comment-form" title="link to add a new {{ theme.comment_context }}" class="btn add-comment">Add {{ theme.comment_context }}</a>
-	{% endif %}
 
 	<!-- List the comments -->
 	<ul id="comments-list">
