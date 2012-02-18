@@ -48,16 +48,19 @@
       <h1><a href="{{space.permalink}}" title="link to {{space.title}}">{{space.title}}</a></h1>
 
       <div id="top-bar">
-        <a href="{{space.permalink}}" title="{{space.title}}"><img src="http://rusic-tutorials-theme.s3.amazonaws.com/img/logo.png" alt="Best Recipes Logo" class="logo" /></a>
         <div id="user-block">
+          
           {% if current_user %}
+          
           <!-- User block -->
           <div id="logged-in">
             Hey, {{current_user.nickname}}<br/>
             <a href="/auth/signout" title="logout" class="logout">logout</a>
           </div>
-          <img src="{{current_user.image_url}}" alt="avatar of {{current_user.nickname}}" class="avatar" width="40" height="40" />
+          <img class="left" src="{{current_user.image_url}}" alt="avatar of {{current_user.nickname}}" class="avatar" width="40" height="40" />
+          
           {% else %}
+
           <!--Login prompts -->
           <ul class="auth">
             <li class="twitter"><a href="/auth/twitter" class="button"><span></span>Twitter</a></li>
@@ -67,6 +70,7 @@
             <i></i><p>login with twitter or facebook to add new or {{ theme.like_context }} {{ theme.ideas_context }}</p>
           </div>
           {% endif %}
+
           </div>
         </div>
     

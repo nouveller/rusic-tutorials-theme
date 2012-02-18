@@ -7,15 +7,12 @@
       
       <input class="input-text" id="title" name="idea[title]" type="text" placeholder="Swatch name..." />
       
-      <!-- Custom field 1 (prep time) -->
-      <div class="input last">
-        <label>Colours to send</label>
-        <input id="colours" name="idea[custom1]" type="text" class="field required" value="{{ params.colours }}">
-      </div>
-      
       <input type="submit" value="submit colours" class="input-submit" />
 
       <div class="checkarea"><input type="checkbox" name="idea[should_post_to_social]" value="1" checked />share to {{current_user.provider}}?</div>
+
+      <!-- Custom field 1 (prep time) -->
+      <input id="colours" name="idea[custom1]" type="text" value="{{ params.colours }}">
       
   </form>
   {% else %}
