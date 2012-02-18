@@ -47,6 +47,12 @@
     <header>
       <h1><a href="{{space.permalink}}" title="link to {{space.title}}">{{space.title}}</a></h1>
 
+      <a class="bookmarklet" href="javascript: (function() {
+      var s = document.createElement('script');
+      s.setAttribute('src','path/to/js');
+      document.body.appendChild(s);
+      })();">Get COLOURS!</a>
+
       <div id="top-bar">
         <div id="user-block">
           

@@ -11,14 +11,15 @@
 
   </li>
 </ul>
-	
+
+
+<!--	
 {% if idea.liked? %}
 <span class="liked">{{idea.likes}}</span>
 {% else %}
 <div class="likes" the_link="{{idea.like_link}}"><span class="likecount">{{idea.likes}}</span></div>
 {% endif %}
 
-<!--
 {% if idea.user.uuid == current_user.uuid %}
 <a href="{{idea.permalink}}/edit" title="link to edit {{idea.title}}" class="editbtn">edit</a>
 {% endif %}
