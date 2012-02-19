@@ -27,11 +27,10 @@
     
     <title>
     {% if idea %}
-    {{idea.title}} &middot; {{space.title}}
+    {{idea.title}} | The web in colours
     {% else %}
-    {{space.title}}
+    The web in colours
     {% endif %}
-    ..local mode..
     </title>
 
     <meta name="viewport" content="width=device-width">
@@ -52,7 +51,7 @@
         var s = document.createElement('script');
         s.setAttribute('src','http://localhost:8888/Colours/public/colour.bm.js');
         document.body.appendChild(s);
-        })();">Get COLOURS! (drag this to your bookmarks bar)</a>
+        })();">Get COLOURS! <small>Drag to your bookmarks bar</small></a>
 
         <div id="top-bar">
           <div id="user-block">
