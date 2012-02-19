@@ -70,7 +70,6 @@ body {
   background: black;
   color: #fff; 
   padding: 80px 0 0 0;
-  min-height: 2000px;
 }
 
 a,a:visited {
@@ -170,8 +169,9 @@ header {
 }
 
 #top-bar {
-  width: 260px;
+  width: auto;
   float: right;
+  margin: 0 10px 0 0;
 }
 
 #logged-in {
@@ -342,6 +342,10 @@ margin: 10px 0 0 10px;
 position: relative;
 left: 20px;
 top: 18px;
+}
+
+.popup-page .bookmarklet {
+  display: none;
 }
 
 @media only screen and (min-width: 35em) {
