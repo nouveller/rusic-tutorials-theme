@@ -70,7 +70,7 @@
       top: ((windowHeight/2)-(iframeHeight/2)),
       left: ((windowWidth/2)-(iframeWidth/2)),
       overflow: 'hidden',
-      border: 'solid 10px rgba(0,0,0,0.5)'   
+      border: 'none'  
     });
 
     jFrame.attr('src', iframeSrc + '?colours='+coloursToSend + '&url=' + encodeURIComponent(window.location.href));

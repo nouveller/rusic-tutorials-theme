@@ -48,5 +48,12 @@
       }); 
     });
   }
+
+  var cancelBtn = $('#cancel-popup');
+
+  cancelBtn.click(function(e) {
+    $('html').hide();  
+    e.preventDefault();
+  });
     
 })(jQuery);
