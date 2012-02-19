@@ -1,6 +1,6 @@
 (function($) { $(document).ready(function() {
 
-  var body = $('body');
+  var html = $('html');
 
   function renderSwatches()
   {
@@ -60,7 +60,7 @@
 
   if (window != window.top)
   {
-    body.addClass('popup-page');
+    html.addClass('popup-page');
   }
     
 }); })(jQuery);

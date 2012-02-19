@@ -205,6 +205,10 @@ header {
   overflow: hidden;
 }
 
+.new-idea-form .checkarea {
+  float: left;
+}
+
 .input-text {
   width: 400px;
   padding: 0 10px 0 10px;
@@ -344,8 +348,39 @@ left: 20px;
 top: 18px;
 }
 
+
+/* popup stlyes */
+
+#cancel-popup {
+  float: right;
+  margin: 10px 0 0 0;
+  text-transform: uppercase;
+  display: none;
+}
+
+.popup-page #cancel-popup {
+  display: block;
+}
+
+.popup-page {
+  margin: 10px;
+  background: rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
 .popup-page .bookmarklet {
   display: none;
+}
+
+.popup-page body {
+  padding: 0;
+  height: 240px;
+}
+
+.popup-page header {
+  position: static;
 }
 
 @media only screen and (min-width: 35em) {
