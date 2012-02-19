@@ -42,7 +42,7 @@
 
     {{ content_for_header }}
   </head>
-  <body class="{% unless current_user %}logged-out{% endunless %} {% if params.colours %}popup-page{% endif %}">
+  <body class="{% unless current_user %}logged-out{% endunless %}">
 
     <header>
       <h1><a href="{{space.permalink}}" title="link to {{space.title}}">The web in colours</a></h1>

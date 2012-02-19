@@ -1,4 +1,6 @@
-(function($) {
+(function($) { $(document).ready(function() {
+
+  var body = $('body');
 
   function renderSwatches()
   {
@@ -55,5 +57,10 @@
     $('html').hide();  
     e.preventDefault();
   });
+
+  if (window != window.top)
+  {
+    body.addClass('popup-page');
+  }
     
-})(jQuery);
+}); })(jQuery);
