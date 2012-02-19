@@ -45,38 +45,41 @@
   <body class="{% unless current_user %}logged-out{% endunless %}">
 
     <header>
-      <h1><a href="{{space.permalink}}" title="link to {{space.title}}">The web in colours</a></h1>
+      <div class="wrapper">
+        <h1><a href="{{space.permalink}}" title="link to {{space.title}}">The web in colours</a></h1>
 
-      <a class="bookmarklet" href="javascript: (function() {
-      var s = document.createElement('script');
-      s.setAttribute('src','http://localhost:8888/Colours/public/colour.bm.js');
-      document.body.appendChild(s);
-      })();">Get COLOURS! (drag this to your bookmarks bar)</a>
+        <a class="bookmarklet" href="javascript: (function() {
+        var s = document.createElement('script');
+        s.setAttribute('src','http://localhost:8888/Colours/public/colour.bm.js');
+        document.body.appendChild(s);
+        })();">Get COLOURS! (drag this to your bookmarks bar)</a>
 
-      <div id="top-bar">
-        <div id="user-block">
-          
-          {% if current_user %}
-          
-          <!-- User block -->
-          <div id="logged-in">
-            Hey, {{current_user.nickname}}<br/>
-            <a href="/auth/signout" title="logout" class="logout">logout</a>
+        <div id="top-bar">
+          <div id="user-block">
+            
+            {% if current_user %}
+            
+            <!-- User block -->
+            <div id="logged-in">
+              Hey, {{current_user.nickname}}<br/>
+              <a href="/auth/signout" title="logout" class="logout">logout</a>
+            </div>
+            <img class="left" src="{{current_user.image_url}}" alt="avatar of {{current_user.nickname}}" class="avatar" width="40" height="40" />
+            
+            {% else %}
+
+            <!--Login prompts -->
+            <ul class="auth">
+              <li>Login with: </li>
+              <li class="twitter"><a href="/auth/twitter" class="button"><span></span>Twitter</a></li>
+              <li class="facebook"><a href="/auth/facebook" class="button"><span></span>Facebook</a></li>
+            </ul>
+            {% endif %}
+
+            </div>
           </div>
-          <img class="left" src="{{current_user.image_url}}" alt="avatar of {{current_user.nickname}}" class="avatar" width="40" height="40" />
           
-          {% else %}
-
-          <!--Login prompts -->
-          <ul class="auth">
-            <li>Login with: </li>
-            <li class="twitter"><a href="/auth/twitter" class="button"><span></span>Twitter</a></li>
-            <li class="facebook"><a href="/auth/facebook" class="button"><span></span>Facebook</a></li>
-          </ul>
-          {% endif %}
-
-          </div>
-        </div>
+        </div><!-- /.wrapper -->
     
       </header>
 
