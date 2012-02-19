@@ -1,12 +1,12 @@
 <div id="filter-bar">
-  
-  <div id="order-by">
-    Order by:
-    <a href="{{space.permalink}}" title="show recipes in date order" class="btn {% if filter == "own" %}{% else %}{% if sort == "likes" %}{% else %}active{% endif %}{% endif %}">date</a>
-    <a href="{{space.permalink}}?sort=likes" title="show most popular recipes first" class="btn {% if sort == "likes" %}active{% endif %}">popular</a>
-{% if current_user %}<a href="{{space.permalink}}?filter=own" title="show my recipes" class="btn {% if filter == "own" %}active{% endif %}">mine</a>{% endif %}
-  </div>
-  
+  <div class="wrapper">  
+    <div id="order-by">
+      Order by:
+      <a href="{{space.permalink}}" title="show recipes in date order" class="btn {% if filter == "own" %}{% else %}{% if sort == "likes" %}{% else %}active{% endif %}{% endif %}">date</a>
+      <a href="{{space.permalink}}?sort=likes" title="show most popular recipes first" class="btn {% if sort == "likes" %}active{% endif %}">popular</a>
+      {% if current_user %}<a href="{{space.permalink}}?filter=own" title="show my recipes" class="btn {% if filter == "own" %}active{% endif %}">mine</a>{% endif %}
+    </div>
+  </div><!-- /.wrapper -->
 </div>
 
 {% if space.ideas != empty %}
@@ -18,7 +18,7 @@
       <ul class="swatches" data-colours="{{idea.custom1}}">
       </ul>
       <div class="colour-info">
-        <p><a href="{{idea.permalink}}">{{idea.title}}</a> - Found: <a href="{{idea.content}}">{{idea.content}}</a></p>
+        <p><a href="{{idea.permalink}}">{{idea.title}}</a> | Found on <a href="{{idea.content}}">{{idea.content}}</a></p>
       </div><!-- /.colour-info -->  
     </div><!-- /.colour-pane -->
 
@@ -38,5 +38,3 @@
 </div>
 
 {% endif %}
-
-
