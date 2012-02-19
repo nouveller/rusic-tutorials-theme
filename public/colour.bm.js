@@ -6,9 +6,10 @@
       iframeSrc     = 'http://takenby.rusic.com/colours/ideas/new',
       iframeWidth   = 750,
       iframeHeight  = 260,
+      // refrence to my loaded version of jquery
       jq;
   
-  // include jquery if it's not already on the page, otherwise run
+  // include the latest version jquery on the page with js, don't want to assume it's on the page already
   var s = document.createElement('script');
   s.setAttribute('src','//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js');
   s.onload = runColour;
@@ -60,23 +61,22 @@
     updateWindow();
 
     var jFrame = jq('<iframe/>');
-    console.log(jFrame);
 
-    // Styles for the iframe.
-    var iframeStyle = 'position: fixed; z-index: 999999; width: '+iframeWidth+'px; height: '+iframeHeight+'px; left: '+((windowWidth/2)-(iframeWidth/2))+'px; top: '+((windowHeight/2)-(iframeHeight/2))+'px; border: none; overflow: hidden;';
+    jFrame.css({
+      position: 'fixed',
+      'z-index': 999999,
+      width: iframeWidth,
+      height: iframeHeight,
+      top: ((windowHeight/2)-(iframeHeight/2)),
+      left: ((windowWidth/2)-(iframeWidth/2)),
+      overflow: 'hidden',
+      border: 'solid 10px rgba(0,0,0,0.5)'   
+    });
 
-    // Create an iframe element and set some attributes.
-    var iframe = document.createElement('iframe');
+    jFrame.attr('src', iframeSrc + '?colours='+coloursToSend + '&url=' + encodeURIComponent(window.location.href));
+    jFrame.attr('id', 'rusic-modal');
 
-    // Pass the current url across to the space.
-    iframe.setAttribute('src', iframeSrc + '?colours='+coloursToSend + '&url=' + encodeURIComponent(window.location.href) );
-
-    iframe.setAttribute('id', 'rusic-modal');
-    iframe.setAttribute('style', iframeStyle);
-
-    // Inject the iframe into the host page.
-    var body = document.getElementsByTagName('body')[0];
-    body.appendChild(iframe);
+    jq('body').append(jFrame);
 
     attachEvents();
   }
