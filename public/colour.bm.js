@@ -1,6 +1,11 @@
 (function() {
 
-  var colours = new Array();
+  var colours       = new Array(),
+      windowWidth, windowHeight,
+      modal,
+      iframeSrc     = 'http://takenby.rusic.com/colours/ideas/new',
+      iframeWidth   = 750,
+      iframeHeight  = 260;
   
   // include jquery if it's not already on the page, otherwise run
   if (typeof jQuery == 'undefined')
@@ -17,8 +22,6 @@
 
   function runColour()
   {
-    console.log('Running colour, jQuery ' + jQuery.fn.jquery);
-
     (function($) {
 
       // loop through all dom elements, exlcuding a couple
@@ -61,11 +64,10 @@
 
   function loadRusicIframe(coloursToSend)
   {
-    // This is the page that will display inside the iframe.
-    var iframeSrc = 'http://takenby.rusic.com/colours/ideas/new';
+    updateWindow();
 
     // Styles for the iframe.
-    var iframeStyle = 'position: fixed; z-index: 999999; width: 750px; height: 260px; right: 0; top: 0; border: none; overflow: hidden; background-color: white;';
+    var iframeStyle = 'position: fixed; z-index: 999999; width: '+iframeWidth+'px; height: '+iframeHeight+'px; left: '+((windowWidth/2)-(iframeWidth/2))+'px; top: '+((windowHeight/2)-(iframeHeight/2))+'px; border: none; overflow: hidden;';
 
     // Create an iframe element and set some attributes.
     var iframe = document.createElement('iframe');
@@ -79,6 +81,34 @@
     // Inject the iframe into the host page.
     var body = document.getElementsByTagName('body')[0];
     body.appendChild(iframe);
+
+    attachEvents();
+  }
+
+  function updateWindow()
+  {
+    windowWidth   = $(window).width(),
+    windowHeight  = $(window).height();
+  }
+
+  function attachEvents()
+  {
+    // store a reference to the new injected modal
+    modal = $('#rusic-modal');
+
+    // update the window's width and height on resizing the browser
+    $(window).on('resize', function() {
+      updateWindow();
+      centreModal();  
+    });
+  }
+
+  function centreModal()
+  {
+    modal.css({
+      top: ((windowHeight/2)-(iframeHeight/2)),
+      left: ((windowWidth/2)-(iframeWidth/2))   
+    });
   }
 
   function removeSpaces(string) {
