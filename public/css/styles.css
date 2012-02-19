@@ -446,6 +446,10 @@ header {
   text-transform: uppercase;
   font-size: 16px;
 }
+.show-page .swatches,
+.show-page .swatch {
+  height: 200px;
+}
 .highlight {
   opacity: 1!important;
 }
@@ -571,11 +575,11 @@ h2 {
 }
 #comments-list {
   padding: 0;
-  margin: 0 0 0 10px;
+  margin: 0;
   list-style: none;
 }
 #comments-list li {
-  padding: 10px 0 10px 0;
+  padding: 10px 0 10px 10px;
   overflow: hidden;
   border-bottom: solid 1px rgba(255, 255, 255, 0.2);
 }
@@ -617,6 +621,9 @@ h2 {
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.popup-page .wrapper {
+  width: 100%;
 }
 .popup-page #cancel-popup {
   display: block;

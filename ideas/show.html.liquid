@@ -43,9 +43,13 @@
 	{% if idea.comments != empty %}
 	{% for comment in idea.comments %}
 	<li>
-		<a href="{{comment.user.profile_url}}" title="link to profile of {{comment.user.nickname}} on {{comment.user.provider}}"><img src="{{comment.user.image_url}}" alt="avatar for {{comment.user.nickname}}" width="60" height="60" class="avatar" /></a>
-		<div class="comment-content"><i></i>{{comment.body | markdown}}</div>
-		<div class="comment-meta">by <a href="{{comment.user.profile_url}}" title="Profile of {{comment.user.nickname}} on {{comment.user.provider}}">{{comment.user.nickname}}</a><br /> {{ comment.created_at | human_time_distance }} ago</div>
+		<div class="comment-author">
+      <a href="{{comment.user.profile_url}}" title="link to profile of {{comment.user.nickname}} on {{comment.user.provider}}"><img src="{{comment.user.image_url}}" alt="avatar for {{comment.user.nickname}}" width="60" height="60" class="avatar" /></a>
+    </div><!-- /.comment-author -->
+		<div class="comment-main">
+      <div class="comment-content">{{comment.body | markdown}}</div>
+      <div class="comment-meta">by <a href="{{comment.user.profile_url}}" title="Profile of {{comment.user.nickname}} on {{comment.user.provider}}">{{comment.user.nickname}}</a><br /> {{ comment.created_at | human_time_distance }} ago</div>
+    </div><!-- /.comment-main -->
 	</li>
 	{% endfor %}
 	{% else %}
@@ -58,6 +62,7 @@
 <!-- Add comments form -->
 {% if current_user %}
 
+<a name="comment-form"></a>
 <div class="dummy-header">
 	<h2>Add a {{ theme.comment_context }}</h2>
 </div><!-- /.dummy-header -->	
