@@ -644,12 +644,13 @@ footer {
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
 }
 .popup-page footer {
   display: none;
 }
 .popup-page .wrapper {
-  width: 100%;
+  width: 95%;
 }
 .popup-page #cancel-popup {
   display: block;
@@ -660,6 +661,7 @@ footer {
 .popup-page body {
   padding: 0;
   height: 240px;
+  overflow: hidden;
 }
 .popup-page header {
   position: static;
