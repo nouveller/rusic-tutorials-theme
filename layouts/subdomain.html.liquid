@@ -81,22 +81,24 @@
         </div><!-- /.wrapper -->
     
       </header>
-
-    {% if error %}
-    <div class="alert alert-message error">
-      {{ error }}
-    </div>
-    {% endif %}
-    {% if alert %}
-    <div class="alert alert-message warning">
-      {{ alert }}
-    </div>
-    {% endif %}
-    {% if notice %}
-    <div class="alert alert-message success prompt">
-      {{ notice }}
-    </div>
-    {% endif %}
+    
+    <div id="alerts">
+        {% if error %}
+        <div class="alert alert-message error">
+          {{ error }}
+        </div>
+        {% endif %}
+        {% if alert %}
+        <div class="alert alert-message warning">
+          {{ alert }}
+        </div>
+        {% endif %}
+        {% if notice %}
+        <div class="alert alert-message success prompt">
+          {{ notice }}
+        </div>
+        {% endif %}
+    </div><!-- /#alerts -->
       
     <div class="wrapper">
         {{yield}}

@@ -1,6 +1,7 @@
 (function($) { $(document).ready(function() {
 
-  var html = $('html');
+  var html = $('html'),
+      body = $('body');
 
   function renderSwatches()
   {
@@ -54,13 +55,28 @@
   var cancelBtn = $('#cancel-popup');
 
   cancelBtn.click(function(e) {
-    $('html').hide();  
+    html.hide();  
     e.preventDefault();
   });
 
   if (window != window.top)
   {
     html.addClass('popup-page');
+  }
+
+  // hackey login thing
+
+  if (body.hasClass('logged-out'))
+  {
+    // make these links open in a new window
+    var signIn        = $('.auth a'),
+        signInMessage = '<div class="alert alert-message success prompt">Hold up, you need to be signed in with first!</div>';
+    
+    signIn.attr('target','_blank');
+
+    signIn.click(function(e) {
+      html.hide();  
+    });
   }
     
 }); })(jQuery);
