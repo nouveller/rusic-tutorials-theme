@@ -53,7 +53,7 @@
     });
   }
 
-  var cancelBtn = $('#cancel-popup');
+  var cancelBtn = $('#cancel-popup, .cancel-popup-class');
 
   cancelBtn.click(function(e) {
     html.hide();  

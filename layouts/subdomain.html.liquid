@@ -85,17 +85,17 @@
     <div id="alerts">
         {% if error %}
         <div class="alert alert-message error">
-          {{ error }}
+          {{ error }} <a href="#" class="cancel-popup-class">CLOSE</a>
         </div>
         {% endif %}
         {% if alert %}
         <div class="alert alert-message warning">
-          {{ alert }}
+          {{ alert }} <a href="#" class="cancel-popup-class">CLOSE</a>
         </div>
         {% endif %}
         {% if notice %}
         <div class="alert alert-message success prompt" id="logged-in-from-somewhere">
-          {{ notice }}
+          {{ notice }} <a href="#" class="cancel-popup-class">CLOSE</a>
         </div>
         {% endif %}
     </div><!-- /#alerts -->
