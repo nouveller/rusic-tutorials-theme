@@ -1,7 +1,8 @@
 (function($) { $(document).ready(function() {
 
-  var html = $('html'),
-      body = $('body');
+  var html    = $('html'),
+      body    = $('body'),
+      alerts  = $('#alerts');
 
   function renderSwatches()
   {
@@ -66,17 +67,29 @@
 
   // hackey login thing
 
-  if (body.hasClass('logged-out'))
+  if (body.hasClass('logged-out') && html.hasClass('popup-page'))
   {
     // make these links open in a new window
     var signIn        = $('.auth a'),
-        signInMessage = '<div class="alert alert-message success prompt">Hold up, you need to be signed in with first!</div>';
+        signInMessage = '<div class="alert alert-message success prompt">Hold up, you need to be signed in first!</div>';
     
     signIn.attr('target','_blank');
+
+    alerts.html(signInMessage);
 
     signIn.click(function(e) {
       html.hide();  
     });
+
+    $('#main-content').hide();
+  }
+  
+  // if logged in using the bookmarklet, skeptical test...
+  if (history.length <= 2 && $('#logged-in-from-somewhere').length == 1)
+  {
+    setTimeout(function() {
+      window.close();
+    }, 1000);
   }
     
 }); })(jQuery);
